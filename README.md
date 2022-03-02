@@ -1,6 +1,44 @@
-## Hai, saya Vincentius Andri Kurnianto
+# Sejarah dan Rencana Pengembangan Situs Web Personal VincentAndriK
 
-Saya selaku pendiri dari web [VincentAndriK](https://www.vincentandrik.id) ingin menyampaikan bahwa platform Github ini digunakan untuk membangun <i>to do list</i> dari <i>website </i> tersebut. Bisa dicek di link [Project](https://github.com/users/VincentAndriK/projects/1)
+- Bahasa : Indonesia
+- Versi : 2020.1.2.0
+- Situs Web : [VincentAndriK Personal Web](https://www.vincentandrik.id/)
 
-<img width="100%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=vincentandrik&title_color=79ff97&icon_color=63a2ff&text_color=ffffff&bg_color=151515&layout=compact" />
-<img width="100%" src="https://github-readme-stats.vercel.app/api?username=vincentandrik&&show_icons=true&title_color=79ff97&icon_color=63a2ff&text_color=ffffff&bg_color=151515" />
+## Sejarah
+
+**Versi 2020.1.0.0 - 17 Juni 2020**
+- Rilis Awal
+- Situs Utama
+- Situs Penanggalan Online
+
+**Versi 2020.1.0.1 - 19 Juni 2020**
+- Rilis Situs Blog
+- Perbaikan Tampilan Penanggalan Online
+
+**Versi 2020.1.1.0 - 23 Juni 2020**
+- Perbaikan Situs Utama
+- Perbaikan bug dan tampilan di Situs Penanggalan Online
+- Rilis Situs Pengembangan
+
+**Versi 2020.1.1.1 - 26 Juni 2020**
+- Rilis _Mini Project_ : _Number Counter, Color Generator (+ Hex Code), Clock (Analog and Digital)_
+
+**Versi 2020.1.1.2 - 5 Juli 2020**
+- Rilis _Mini Project_ : _Number Generator_
+
+**Versi 2020.1.2.0 - 16 Juli 2020**
+- Rilis Notepad Online
+- Perbaikan Tampilan Situs Web
+
+## Rencana Pengembangan
+
+**Sisi Tampilan**
+- Penambahan Fungsi Dark Mode dan Light Mode
+- Perbaikan Tampilan Semua Situs
+- Pembuatan Logo dan Ikon Situs Web
+
+**Sisi Fungsi**
+- Akan dirilis : _To Do List_, Dirgahayu Republik Indonesia (Beta), Perhitungan Geometri (Rumus Bangun), Game Tic Tac Toe, Game Rock - Scissors - Paper
+
+**Rencana Waktu Pengembangan**
+- Direncanakan maksimal akhir tahun 2022 sudah ada beberapa hal yang diperbaiki atau dikembangkan
