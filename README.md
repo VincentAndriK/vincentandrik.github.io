@@ -34,8 +34,6 @@
 
 **Sisi Tampilan**
 - Penambahan Fungsi Dark Mode dan Light Mode
-- Perbaikan Tampilan Semua Situs
-- Pembuatan Logo dan Ikon Situs Web
 
 **Sisi Fungsi**
 - Akan dirilis : _To Do List_, Dirgahayu Republik Indonesia (Beta), Perhitungan Geometri (Rumus Bangun), Game Tic Tac Toe, Game Rock - Scissors - Paper
