@@ -17,8 +17,15 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.1" rel="stylesheet" />
     <script language="JavaScript" src="https://rhashemian.github.io/js/NumberFormat.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+      <!-- Make sure you put this AFTER Leaflet's CSS -->
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <style>
+      #map { height: 300px; }
+    </style>
     <script>
         const api_url = 'https://apicovid19indonesia-v2.vercel.app/api/indonesia/more';
+        const api_prov_url = 'https://apicovid19indonesia-v2.vercel.app/api/indonesia/provinsi/more';
         async function getCovidData(){
             const response = await fetch(api_url);
             const data = await response.json();
@@ -40,7 +47,9 @@
 <body>
     <div class="container-fluid py-4">
         <h1>Data Covid-19 di Indonesia</h1>
-    </div>
+      <p>Last Update : <span id="update"></span></p>
+      <p>Sumber API dari <a href="https://apicovid19indonesia-v2.vercel.app">sini</a> yang dikembangkan dan diolah di <a href="https://github.com/Reynadi531/api-covid19-indonesia-v2">Github</a></p>
+  </div>
     <div class="container-fluid py-4">
         <div class="row">
           <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
@@ -113,10 +122,39 @@
           </div>
         </div>
     </div>
+    
     <div class="container-fluid py-4">
-        <p>Last Update : <span id="update"></span></p>
-        <p>Sumber API dari <a href="https://apicovid19indonesia-v2.vercel.app">sini</a> yang dikembangkan dan diolah di <a href="https://github.com/Reynadi531/api-covid19-indonesia-v2">Github</a></p>
+      <div id="map">
+      </div>
     </div>
+    <script>
+      async function getCovidProvData(){
+          const responseProv = await fetch(api_prov_url);
+          const dataProv = await responseProv.json();
+          for (var i=0;i<dataProv.length;i++){
+              let lat = dataProv[i].lokasi.lat;
+              let lon = dataProv[i].lokasi.lon;
+              let prov = dataProv[i].provinsi;
+              let kasus = dataProv[i].kasus;
+              let sembuh = dataProv[i].sembuh;
+              let meninggal = dataProv[i].meninggal;
+              let dirawat = dataProv[i].dirawat;
+              var marker = L.marker([lat, lon]).addTo(map);
+              marker.bindPopup("<b>" + prov + "</b><br>Kasus Positif : " + kasus + "<br> Kasus Sembuh : " + sembuh + "<br> Kasus Meninggal : " + meninggal + "<br> Kasus Dirawat : " + dirawat).openPopup();
+          }
+      }
+          
+      getCovidProvData();
+      var map = L.map('map').setView([-0.7, 115.9], 3.5);
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          maxZoom: 18,
+          id: 'mapbox/streets-v11',
+          tileSize: 512,
+          zoomOffset: -1,
+          accessToken: 'pk.eyJ1IjoidmluY2VudGFuZHJpayIsImEiOiJjbDBreDdkb3cwNnNzM2N0NDc3OTRoYzM0In0.8U3C7RDazAui6J7gLWuh1w'
+      }).addTo(map);
+    </script>
     <div class="fixed-plugin">
         <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
             <i class="material-icons py-2">settings</i>
