@@ -135,10 +135,10 @@
               let lat = dataProv[i].lokasi.lat;
               let lon = dataProv[i].lokasi.lon;
               let prov = dataProv[i].provinsi;
-              let kasus = dataProv[i].kasus;
-              let sembuh = dataProv[i].sembuh;
-              let meninggal = dataProv[i].meninggal;
-              let dirawat = dataProv[i].dirawat;
+              let kasus = FormatNumberBy3(dataProv[i].kasus, ",", ".");
+              let sembuh = FormatNumberBy3(dataProv[i].sembuh, ",", ".");
+              let meninggal = FormatNumberBy3(dataProv[i].meninggal, ",", ".");
+              let dirawat = FormatNumberBy3(dataProv[i].dirawat, ",", ".");
               var marker = L.marker([lat, lon]).addTo(map);
               marker.bindPopup("<b>" + prov + "</b><br>Kasus Positif : " + kasus + "<br> Kasus Sembuh : " + sembuh + "<br> Kasus Meninggal : " + meninggal + "<br> Kasus Dirawat : " + dirawat).openPopup();
           }
