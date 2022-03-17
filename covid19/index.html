@@ -24,6 +24,10 @@
       #map { height: 300px; }
     </style>
     <script>
+        function addZero(i) {
+          if (i < 10) {i = "0" + i}
+          return i;
+        }
         const api_url = 'https://apicovid19indonesia-v2.vercel.app/api/indonesia/more';
         const api_prov_url = 'https://apicovid19indonesia-v2.vercel.app/api/indonesia/provinsi/more';
         async function getCovidData(){
@@ -39,7 +43,7 @@
             document.getElementById("ameninggal").innerHTML = FormatNumberBy3(data.penambahan.meninggal, ",", ".");
             document.getElementById("asembuh").innerHTML = FormatNumberBy3(data.penambahan.sembuh, ",", ".");
             document.getElementById("adirawat").innerHTML = FormatNumberBy3(data.penambahan.dirawat, ",", ".");
-            document.getElementById("update").innerHTML = d.getDate() + " " + months[d.getMonth()] + " " + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes();
+            document.getElementById("update").innerHTML = addZero(d.getDate()) + " " + months[d.getMonth()] + " " + d.getFullYear() + " " + addZero(d.getHours()) + ":" + addZero(d.getMinutes());
         }
         getCovidData();
     </script>
@@ -49,6 +53,7 @@
         <h1>Data Covid-19 di Indonesia</h1>
       <p>Last Update : <span id="update"></span></p>
       <p>Sumber API dari <a href="https://apicovid19indonesia-v2.vercel.app">sini</a> yang dikembangkan dan diolah di <a href="https://github.com/Reynadi531/api-covid19-indonesia-v2">Github</a></p>
+      <p>Dikembangkan oleh <a href="../me/">VincentAndriK</a></p>
   </div>
     <div class="container-fluid py-4">
         <div class="row">
