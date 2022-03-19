@@ -2,11 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- You MUST include jQuery before Fomantic -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/semantic.min.js"></script>
+    <title>Counter</title>
 </head>
 <body>
-    
+    <br />
+	<div class="ui container">
+        <h1>Number Generator</h1>
+        <div class="ui card">
+            <div class="header">
+				<label>Angka Maksimal</label>
+                <div class="ui input">
+                    <input type="number" id="angka" value="10">
+                </div>
+                <button class="ui primary button" onclick="acak()">Acak</button>
+            </div>
+            <div class="content">
+                <span class="ui big blue text" id="demo"></span>
+            </div>
+        </div>
+		<footer class="footer">
+			<h4>&copy; VincentAndriK (2020 - <?php echo date("Y") ?>)</h4>
+			<h4><a href="http://www.vincentandrik.id" target="_blank">Situs Utama</a> - <a href="../" target="_blank">Situs Pengembangan</a></h4>
+		</footer>
+    </div>
+    <script src="../js/number.js"></script>
 </body>
 </html>

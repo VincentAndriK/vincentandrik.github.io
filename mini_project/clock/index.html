@@ -2,11 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- You MUST include jQuery before Fomantic -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/semantic.min.js"></script>
+    <title>Jam Analog dan Jam Digital / Analog Clock and Digital Clock</title>
 </head>
 <body>
-    
-</body>
+    <br />
+    <div class="ui container">
+        <h1>Jam Analog dan Jam Digital / <em>Analog Clock and Digital Clock</em></h1>
+        <div class="ui card">
+            <div class="ui content">
+                <canvas id="canvas"></canvas>
+                <h1 style="display:block" class="ui header" id="digital24"></h1>
+                <h1 style="display:none" class="ui header" id="digital12"></h1>
+                <div class="ui toggle checkbox">
+                  <input type="checkbox" name="public" id="pilihan">
+                  <label>Format 12 Jam</label>
+                </div>
+                <div>* Jika tidak di cek, maka jam digital dalam format 24 jam</div>
+            </div>
+        </div>
+		<footer class="footer">
+			<h4>&copy; VincentAndriK (2020 - <?php echo date("Y") ?>)</h4>
+			<h4><a href="http://www.vincentandrik.id" target="_blank">Situs Utama</a> - <a href="../" target="_blank">Situs Pengembangan</a></h4>
+		</footer>
+    </div>
+    <script src="../js/clock.js"></script>
+	</body>
 </html>
